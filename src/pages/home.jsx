@@ -1,126 +1,167 @@
 
-
-import React from "react";
-
-const Home= () => {
+import React from 'react';
+import motorWindingImage from "../assets/motor.jpeg"
+import { Link } from 'react-router-dom';
+function SearchBar() {
   return (
-    <div className="bg-gray-100">
-      {/* Navbar */}
-      <nav className="bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <a href="/" className="text-white text-2xl font-bold">
-                MotorWindingShop
-              </a>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Services
-                </a>
-                <a href="#about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  About Us
-                </a>
-                <a href="#contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <header className="bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-extrabold">
-            Expert Motor Winding Services
-          </h1>
-          <p className="mt-4 text-xl">
-            Reliable repairs and winding solutions for all your motors, large and small.
-          </p>
-          <a
-            href="#services"
-            className="mt-8 inline-block bg-indigo-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-600"
+    <div className="relative max-w-xl mx-auto mt-8 lg:mt-12">
+      <div className="flex items-center bg-transparent shadow-lg rounded-full py-2 pl-4 pr-2">
+        <input
+          type="text"
+          placeholder="Search for motor winding services..."
+          className="flex-grow bg-transparent text-gray-900 placeholder-gray-500 focus:outline-none"
+        />
+        <button className="flex items-center justify-center p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 focus:outline-none">
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Explore Our Services
-          </a>
-        </div>
-      </header>
-
-      {/* About Section */}
-      <section id="about" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center">
-            About Us
-          </h2>
-          <p className="mt-4 text-lg text-gray-600 text-center">
-            With decades of experience, our motor winding shop specializes in rewinding and repairing a wide range of motors, from household appliances to industrial machines. We are committed to delivering quality and efficiency.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-16 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center">
-            Our Services
-          </h2>
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900">Motor Rewinding</h3>
-              <p className="mt-4 text-gray-600">
-                Expert rewinding services for all types of motors, ensuring peak performance and extended life.
-              </p>
-            </div>
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900">Industrial Motor Repair</h3>
-              <p className="mt-4 text-gray-600">
-                Comprehensive repair services for industrial motors, including diagnostics, parts replacement, and maintenance.
-              </p>
-            </div>
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900">Home Appliance Motor Repair</h3>
-              <p className="mt-4 text-gray-600">
-                Fast and reliable repairs for motors in home appliances such as mixers, irons, and washing machines.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-indigo-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-extrabold">Get in Touch</h2>
-          <p className="mt-4 text-lg">
-            Have a motor that needs servicing? Contact us today for a free consultation.
-          </p>
-          <a
-            href="/contact"
-            className="mt-8 inline-block bg-white text-indigo-500 font-semibold py-3 px-6 rounded-lg hover:bg-gray-100"
-          >
-            Contact Us
-          </a>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2024 MotorWindingShop. All rights reserved.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-white">Privacy Policy</a>
-              <a href="#" className="hover:text-white">Terms of Service</a>
-              <a href="#" className="hover:text-white">Contact</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-4.35-4.35m2.83-2.83a7.5 7.5 0 10-10.61-10.61 7.5 7.5 0 0010.61 10.61z"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </div>
   );
-};
+}
+
+function HeroSection() {
+  return (
+    <div className="relative bg-gray-50 overflow-hidden">
+      <SearchBar/>
+      <div className="max-w-7xl mx-auto">
+        <div className="relative z-10 pb-8 bg-gray-50 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+          <svg
+            className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-gray-50 transform translate-x-1/2"
+            fill="currentColor"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <polygon points="50,0 100,0 50,100 0,100" />
+          </svg>
+
+          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+            <div className="sm:text-center lg:text-left">
+              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span className="block xl:inline">Professional Motor Winding</span>{' '}
+                <span className="block text-indigo-600 xl:inline">Services</span>
+              </h1>
+              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                We offer top-notch motor winding solutions for fans, washing machines, motors, and more.
+              </p>
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="rounded-md shadow">
+                  <Link
+                    to="/contact"
+                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                  >
+                    Get in Touch
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          src={motorWindingImage}
+          alt="Motor winding"
+        />
+      </div>
+    </div>
+  );
+}
+
+// function CatalogueSection() {
+//   const categories = [
+//     { name: 'Fans', image: fanImage },
+//     { name: 'Washing Machines', image: washingMachineImage },
+//     { name: 'Motors', image: motorImage },
+//     // Add more categories as needed
+//   ];
+
+//   return (
+//     <div className="bg-gray-100 py-12" id="services">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="text-center">
+//           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+//             Our Services
+//           </h2>
+//           <p className="mt-4 text-lg leading-6 text-gray-500">
+//             We specialize in the following categories:
+//           </p>
+//         </div>
+//         <div className="mt-10">
+//           <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">
+//             {categories.map((category) => (
+//               <div key={category.name} className="group relative bg-white shadow-lg rounded-lg overflow-hidden">
+//                 <div className="relative w-full h-56 bg-white overflow-hidden group-hover:opacity-75">
+//                   <img
+//                     src={category.image}
+//                     alt={category.name}
+//                     className="w-full h-full object-center object-cover"
+//                   />
+//                 </div>
+//                 <div className="mt-4 flex justify-between px-4 py-2">
+//                   <h3 className="text-lg font-medium text-gray-900">
+//                     <a href="#">
+//                       <span aria-hidden="true" className="absolute inset-0" />
+//                       {category.name}
+//                     </a>
+//                   </h3>
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+function Footer() {
+  return (
+    <footer className="bg-gray-800 py-6">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-center space-x-6">
+        <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" className="h-6 w-6" />
+        </a>
+        <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+          <img src="https://cdn-icons-png.flaticon.com/512/1409/1409946.png" alt="Instagram" className="h-6 w-6" />
+        </a>
+        <a href="https://wa.me/yourwhatsappnumber" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" className="h-6 w-6" />
+        </a>
+      </div>
+      <div className="mt-6 text-center text-gray-400">
+        <p>&copy; 2024 MotorWinding. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+    
+      <HeroSection />
+      {/* <CatalogueSection /> */}
+      <Footer />
+      {/* Other sections of your website can be added here */}
+    </div>
+  );
+}
 
 export default Home;
